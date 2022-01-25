@@ -52,6 +52,42 @@ generateButton.addEventListener("click",
 
         // generatore numero compreso tra 90000 e 99999 per codice CP
         let discountCode = Math.floor(Math.random() * 10000) + 90000;
+     // STAMPA DATI SU TICKET DETAIL
+
+        // trascrivo nome passeggero nel biglietto
+        document.getElementById('passanger_name').innerHTML = name;
+
+        // riporto il nome dell'offerta
+        document.getElementById('discount_name').innerHTML = typeUser;
+
+        // genero un numero random della carrozza
+        document.getElementById('carriage').innerHTML = carriageNumber;
+
+        // genero un numero random del codice CP
+        document.getElementById('discount_code').innerHTML = discountCode;
+
+        // riporto il prezzo del biglietto
+        document.getElementById('final_price').innerHTML = finalPrice.toFixed(2) + ' €';
+
+        // Funzione per mostrare i dettagli del biglietto al click del pulsante - richiamo classe style
+        document.getElementById('detail_container_passanger').className = 'show';
     }
-)
+);
+
+
+// FUNZIONE CHE CANCELLA I DATI AL CLICK DEL RELATIVO PULSANTE
+var eraseButton = document.getElementById("reset");
+
+eraseButton.addEventListener("click", 
+    function() {
+        
+        // reset valori cliccando su annulla
+        document.getElementById('name').value = "";
+        document.getElementById('km').value = "";
+        document.getElementById('age').value = "";
+        
+        // Funzione per nascondere i dettagli del biglietto al click del pulsante - richiamo classe style
+        document.getElementById('detail_container_passanger').className = 'hidden';
+    }
+);
 
